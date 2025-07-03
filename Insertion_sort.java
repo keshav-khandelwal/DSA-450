@@ -19,7 +19,7 @@ public class Insertion_sort {
             System.out.print(array[c]);
         }
         System.out.println(" ]");
-        sortedarray(array);
+        insertionsort(array);
         System.out.print("Sorted Array : [ ");
         for (int c = 0; c < a; c++) {
             if (c > 0) {
@@ -32,7 +32,17 @@ public class Insertion_sort {
 
     }
 
-    public static void sortedarray(int[] arr) {
+    public static void insertionsort(int[] arr) {
+        int n = arr.length;
+        for (int i = 1; i < n; i++) {
+            int key = arr[i];
+            int j = i - 1;
+            while (j >= 0 && arr[j] > key) {
+                arr[j + 1] = arr[j];
+                j--;
+            }
+            arr[j + 1] = key;
+        }
 
     }
 
