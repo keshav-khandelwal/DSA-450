@@ -113,7 +113,7 @@ public class Ques_275 {
             temp.next = head;
             head = temp;
             size++;
-            return;
+            
         }
 
         public int pop() {
