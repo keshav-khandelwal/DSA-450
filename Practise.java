@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Practise {
+public class practise {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Size of Array : ");
@@ -15,27 +15,34 @@ public class Practise {
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
         }
-        selectionsort(arr);
-        System.out.print(" Sorted Array : ");
+        System.out.println();
+        sorted(arr);
+        System.out.print("Sorted Array : ");
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
         }
-        sc.close();
+        System.out.println();
     }
-
-    public static void selectionsort(int[] arr) {
-        int n = arr.length;
-        for (int i = 0; i < n; i++) {
-            int minindex = i;
-            for (int j = i + 1; j < n; j++) {
-                if (arr[j] < arr[minindex]) {
-                    minindex = j;
-                }
+    public static void sorted(int[] arr){
+        int n= arr.length;
+        int low =0;
+        int mid =0;
+        int high=n-1;
+        while(mid<=high){
+            if(arr[mid]==0){
+                int temp =arr[low];
+                arr[low]=arr[mid];
+                arr[mid]=temp;
+                low++;
+                mid++;
+            }else if(arr[mid]==1){
+                mid++;
+            }else{
+                int temp =arr[mid];
+                arr[mid]=arr[high];
+                arr[high]=temp;
+                high--;
             }
-            int temp = arr[i];
-            arr[i] = arr[minindex];
-            arr[minindex] = temp;
         }
-        return;
     }
 }
